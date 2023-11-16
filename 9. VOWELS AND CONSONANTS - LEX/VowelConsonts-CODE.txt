@@ -1,0 +1,16 @@
+%{
+int vcount=0;
+int ccount=0;
+%}
+%%
+[aeiouAEIOU] {vcount++;}
+[a-zA-Z] {ccount++;}
+%%
+int yywrap(){} 
+int main()
+{
+printf("Enter the String: "); 
+yylex();
+printf("\n no of Vowels ::%d\n",vcount); 
+printf("\n no of Consonants ::%d\n",ccount);
+}
